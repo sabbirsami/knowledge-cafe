@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Card } from "react-bootstrap";
-const Blog = ({ blog }) => {
+const Blog = ({ blog, handleAddToBookmark }) => {
     console.log(blog);
     return (
         <>
@@ -27,7 +27,12 @@ const Blog = ({ blog }) => {
                             <p className="text-secondary m-0 pe-2">
                                 {blog?.reading_time} min read
                             </p>
-                            <button className="btn p-0 m-0">book</button>
+                            <button
+                                onClick={() => handleAddToBookmark(blog)}
+                                className="btn p-0 m-0"
+                            >
+                                book
+                            </button>
                         </div>
                     </div>
                     <h3>{blog.title}</h3>
@@ -50,5 +55,6 @@ const Blog = ({ blog }) => {
 
 Blog.propTypes = {
     blog: PropTypes.object.isRequired,
+    handleAddToBookmark: PropTypes.func.isRequired,
 };
 export default Blog;
