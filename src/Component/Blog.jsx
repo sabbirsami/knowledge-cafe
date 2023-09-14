@@ -32,8 +32,16 @@ const Blog = ({ blog }) => {
                     </div>
                     <h3>{blog.title}</h3>
                     <div>
-                        <p>{blog.hashtags.map((hash) => hash)}</p>
+                        <p>
+                            {blog.hashtags.map((hash, index) => (
+                                <span className="text-secondary" key={index}>
+                                    {" "}
+                                    #{hash}
+                                </span>
+                            ))}
+                        </p>
                     </div>
+                    <button className="btn btn-link ps-0">Mark as read</button>
                 </Card.Body>
             </Card>
         </>

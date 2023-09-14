@@ -1,6 +1,6 @@
 const Bookmarks = () => {
     return (
-        <div>
+        <div className="mt-4">
             <h1 className="bg-warning">h</h1>
         </div>
     );
